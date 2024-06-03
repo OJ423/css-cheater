@@ -5,6 +5,7 @@ import Buttons from './components/Buttons'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import Sections from './components/Sections'
+import PricingTables from './components/PricingTables'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/buttons' element={<Buttons/>} />
         <Route path='/sections' element={<Sections/>} />
+        <Route path='/pricing-tables' element={<PricingTables/>} />
       </Routes>
     </main>
     <Footer/>

@@ -69,3 +69,158 @@
     align-self: center;
   }
 }
+
+/* Hero Section */
+
+.hero {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text .hero-h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero-cta-button:hover {
+  background-color: #0056b3;
+}
+
+.hero-image {
+  max-width: 50%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+  .hero-content {
+  flex-direction: column;
+  padding: 50px 30px;
+  }
+  .hero-text, .hero-image {
+    max-width: 80%;
+  }
+}
+
+/* Footer */
+
+.footer {
+  border-top: solid 15px #47e495;
+  border-bottom: solid 5px #b1b0b0;
+  background-color: #201e1e;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav a {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-right: 20px;
+}
+
+.footer-nav a:hover {
+  color: #47e495;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #47e495;
+}
+
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+      padding: 100px 20px;
+  }
+
+  .footer-nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .footer-social {
+      margin-top: 20px;
+      display: flex;
+  }
+}

@@ -41,6 +41,11 @@ export default function Navigation() {
               Sections
             </li>
           </NavLink>
+          <NavLink to="/pricing-tables" className={({ isActive }) => "nav-link" + (isActive ? " activated" : "")}>
+            <li onClick={handleMenuOpen} className="list-style-none font-bold text-lg mb-4 flex gap-4 justify-start items-center cursor-pointer hover:text-gray-400 duration-500 ease-out transition-all">
+              Pricing Tables
+            </li>
+          </NavLink>
         </ul>
 
       </section>
