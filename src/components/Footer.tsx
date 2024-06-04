@@ -38,9 +38,6 @@ export default function Footer() {
             <Link to={'/pricing-tables'}>
               <p className='font-bold text-left text-white pt-2 md:border-t-2 md:border-white mt-2 hover:text-gray-800 transition-all duration-500 inline-flex'>Pricing Tables</p>
             </Link>
-            <Link to={'/buttons'}>
-              <p className='font-bold text-left text-white pt-2 md:border-t-2 md:border-white mt-2 hover:text-gray-800 transition-all duration-500 inline-flex'>Footers</p>
-            </Link>
           </div>
         </div>
       </section>

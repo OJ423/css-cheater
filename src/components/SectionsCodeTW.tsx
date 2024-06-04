@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { tailwindSection, tailwindSections } from "../utils/sectionsUtils"
+import { tailwindSection } from "../utils/sectionsUtils"
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css';
 import htmlbars from 'react-syntax-highlighter/dist/esm/languages/hljs/htmlbars';
@@ -10,9 +10,10 @@ SyntaxHighlighter.registerLanguage('htmlbars', htmlbars);
 
 interface SectionsCodeProps {
   sectionName: string,
+  tailwindSections: tailwindSection[],
 }
 
-export default function SectionsCodeTW({ sectionName }: SectionsCodeProps) {
+export default function SectionsCodeTW({ sectionName, tailwindSections }: SectionsCodeProps) {
   const [showCode, setShowCode] = useState<boolean>(false)
   
   function handleShowCode():void {
@@ -27,7 +28,7 @@ ${selectedSection.code}`
     )}
   }
 
-  const selectedTailwind: tailwindSection | undefined = tailwindSections.find((section: cssSection) => section.sectionName === sectionName);
+  const selectedTailwind: tailwindSection | undefined = tailwindSections.find((section: tailwindSection) => section.sectionName === sectionName);
   const sectionTW:string | undefined = selectedTailwind?.code;
   return (<>
     <div className="flex gap-8 my-8 w-[100%] max-w-screen-xl m-auto" key={sectionName}>

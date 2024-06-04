@@ -1,5 +1,5 @@
 /* Three Columns */
-.container {
+.three-columns-container {
   display: flex;
   justify-content: space-between;
   max-width: 1280px;

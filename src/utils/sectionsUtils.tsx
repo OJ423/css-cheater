@@ -11,7 +11,7 @@ export interface cssSection {
 export const cssSections:cssSection[] = [
   {sectionName: 'Responsive Three Column Cards',
     code: {
-      html:`<section class="container">
+      html:`<section class="three-columns-container">
 <div class="column">
   <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="column-img"/>
   <h2 class='h2'>Column Title 1</h2>
@@ -31,7 +31,7 @@ export const cssSections:cssSection[] = [
   <button class="cta-button">Call to Action</button>
 </div>
 </section>`,
-      css:`.container {
+      css:`.three-columns-container {
   display: flex;
   justify-content: space-between;
   max-width: 1280px;

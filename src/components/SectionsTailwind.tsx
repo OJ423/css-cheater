@@ -1,4 +1,5 @@
 import SectionsCodeTW from "./SectionsCodeTW";
+import { tailwindSections } from "../utils/sectionsUtils";
 
 export default function SectionsTailwind() {
   return (
@@ -41,7 +42,7 @@ export default function SectionsTailwind() {
           </div>
         </div>
       </section>
-      <SectionsCodeTW sectionName="Hero Section" />
+      <SectionsCodeTW sectionName="Hero Section" tailwindSections={tailwindSections} />
 
       <h3 className="font-bold text-2xl text-left mb-8 w-[100%] max-w-screen-xl m-auto">
         Three Columns React and Tailwind
@@ -215,7 +216,7 @@ export default function SectionsTailwind() {
           </div>
         </div>
       </section>
-      <SectionsCodeTW sectionName="Three Columns React and Tailwind" />
+      <SectionsCodeTW sectionName="Three Columns React and Tailwind" tailwindSections={tailwindSections} />
 
       <h3 className="font-bold text-2xl text-left mb-8 w-[100%] max-w-screen-xl m-auto">
         Clean Footer React and Tailwind
@@ -331,7 +332,7 @@ export default function SectionsTailwind() {
           </div>
         </div>
       </section>
-      <SectionsCodeTW sectionName="Clean Footer React and Tailwind" />
+      <SectionsCodeTW sectionName="Clean Footer React and Tailwind" tailwindSections={tailwindSections} />
     </>
   );
 }

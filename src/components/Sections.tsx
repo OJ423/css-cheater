@@ -4,6 +4,7 @@ import "../css/sections.css";
 import { cssSections } from "../utils/sectionsUtils";
 import SectionsDisplay from "./SectionsDisplay";
 import SectionsTailwind from "./SectionsTailwind";
+import {motion as m} from "framer-motion"
 
 export default function Sections() {
   // Button Type Filter
@@ -18,17 +19,16 @@ export default function Sections() {
     setButtonFilter("All");
   }
 
-  // Copy Buttons
-  const [showButtonCode, setShowButtonCode] = useState<boolean>(false);
-
-  function handleShowCodeToggle(): void {
-    setShowButtonCode(!showButtonCode);
-  }
   return (
     <>
-      <section className="w-[100%] m-auto py-8 m-auto px-4 lg:px-16 xl:px-2 bg-rose-500 flex justify-center items-center text-white min-h-96">
+      <m.section
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration: 1.5}}
+        exit={{opacity:0}}
+        className="w-[100%] m-auto py-8 m-auto px-4 lg:px-16 xl:px-2 bg-rose-500 flex justify-center items-center text-white min-h-96">
         <div className="flex flex-col md:flex-row gap-8 lg:gap-32 max-w-screen-xl items-center">
-          <div>
+          <div className="flex-1">
             <h1 className="text-3xl md:text-5xl mb-12 font-bold text-left">
               Free CSS & Tailwind & React Sections
             </h1>
@@ -37,7 +37,7 @@ export default function Sections() {
               in your front-end development.
             </p>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block md:flex-1">
             <img
               src={cssSectionsImg}
               alt="CSS and Tailwind Sections"
@@ -45,8 +45,13 @@ export default function Sections() {
             />
           </div>
         </div>
-      </section>
-      <section className="flex flex-col gap-12 items-start justify-start min-h-96 m-auto w-[100%] m-auto px-4 lg:px-16 xl:px-2">
+      </m.section>
+      <m.section
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration: 1.5}}
+        exit={{opacity:0}}
+        className="flex flex-col gap-12 items-start justify-start min-h-96 m-auto w-[100%] m-auto px-4 lg:px-16 xl:px-2">
         <div className="flex flex-row flex-wrap items-center gap-4 md:gap-8 border-b-4 border-rose-500 pb-12 w-[100%] max-w-screen-xl m-auto">
           <p className="font-bold text-xl">Filter:</p>
           <button
@@ -104,41 +109,7 @@ export default function Sections() {
           </h2>
           <SectionsTailwind />
         </section>
-      </section>
-
-      {/* Pop out with button code */}
-      <div
-        onClick={handleShowCodeToggle}
-        className={`${
-          !showButtonCode ? "invisible opacity-0" : "opacity-50"
-        } w-full h-full top-0 left-0 bg-gray-300 fixed duration-500 ease-out transition-all cursor-pointer z-20`}
-      ></div>
-      <section
-        className={`${
-          !showButtonCode ? "translate-x-full" : "translate-x-0"
-        } w-[100vw] sm:w-[50vw] h-full bg-white right-0 top-0 opacity-100 fixed duration-500 ease-out transition-all p-8 flex flex-col gap-4 justify-center items-start z-30 shadow-lg`}
-      ></section>
-      <div
-        onClick={handleShowCodeToggle}
-        className={`${
-          !showButtonCode ? "invisible opacity-0" : "opacity-100"
-        } fixed cursor-pointer text-gray-600 top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 me-5 z-50 transition-all duration-1000`}
-      >
-        <svg
-          className="w-12 h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </div>
+      </m.section>
     </>
   );
 }

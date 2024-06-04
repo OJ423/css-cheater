@@ -6,18 +6,44 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import Sections from './components/Sections'
 import PricingTables from './components/PricingTables'
+import Meta from './components/Meta'
+import PageMeta from './components/PageMeta'
+import  {AnimatePresence} from 'framer-motion'
 
 function App() {
 
   return (
     <>
     <Navigation />
-    <main className='flex flex-col gap-12 px-0 w-[100%]'>
+    <main className='flex flex-col flex-1 content-stretch gap-12 px-0 w-[100%]'>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/buttons' element={<Buttons/>} />
-        <Route path='/sections' element={<Sections/>} />
-        <Route path='/pricing-tables' element={<PricingTables/>} />
+        <Route path='/' element={<>
+          <AnimatePresence initial={false} mode={"wait"}>
+            <Meta {...PageMeta('/')} />
+            <Home/>
+          </AnimatePresence>
+          </>}/>
+        <Route path='/buttons' element={<>
+        <AnimatePresence mode={"wait"}>
+          <Meta {...PageMeta('/buttons')} />
+          <Buttons/>        
+        </AnimatePresence>
+          </>} />
+        <Route path='/sections' element={
+          <>
+          <AnimatePresence mode={"wait"}>
+            <Meta {...PageMeta('/sections')} />
+            <Sections/>
+          </AnimatePresence>
+          </>} />
+        <Route path='/pricing-tables' element={
+          <>
+          <AnimatePresence mode={"wait"}>
+            <Meta {...PageMeta('/pricing-tables')} />
+            <PricingTables/>
+          </AnimatePresence>
+          </>
+          } />
       </Routes>
     </main>
     <Footer/>

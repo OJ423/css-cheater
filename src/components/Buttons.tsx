@@ -6,6 +6,7 @@ import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css';
 import htmlbars from 'react-syntax-highlighter/dist/esm/languages/hljs/htmlbars';
 import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
+import {motion as m } from 'framer-motion'
 
 
 SyntaxHighlighter.registerLanguage('css', css);
@@ -62,18 +63,27 @@ ${selectedButton.code.css}`)
   
   return (
     <>
-    <section className="w-[100%] m-auto py-8 m-auto px-4 lg:px-16 xl:px-2 bg-rose-500 flex justify-center items-center text-white min-h-96">
+    <m.section
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration: 1.5}}
+      exit={{opacity:0}}
+      className="w-[100%] m-auto py-8 m-auto px-4 lg:px-16 xl:px-2 bg-rose-500 flex justify-center items-center text-white min-h-96">
       <div className="flex flex-col md:flex-row gap-8 lg:gap-32 max-w-screen-xl items-center">
-        <div>
+        <div className="flex-1">
           <h1 className="text-3xl md:text-5xl mb-12 font-bold text-left">Free CSS & TailWind Buttons</h1>
           <p className="text-left text-xl text-white">Here's a selection of CSS and Tailwind buttons that I like and are free for you to copy and use as you wish. Use the buttons to copy the code to your clipboard. Enjoy.</p>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block md:flex-1">
           <img src={cssButtonsImg} alt="CSS and Tailwind Buttons" className="rounded-2xl shadow-2xl" />
         </div>
       </div>
-    </section>
-    <section className='flex flex-col gap-12 items-start justify-start min-h-96 m-auto max-w-screen-xl m-auto px-4 lg:px-16 xl:px-2'>
+    </m.section>
+    <m.section
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration: 0.95, ease: "easeOut"}}
+      className='flex flex-col gap-12 items-start justify-start min-h-96 m-auto max-w-screen-xl m-auto px-4 lg:px-16 xl:px-2'>
       <div className="flex flex-row flex-wrap items-center gap-4 md:gap-8 border-b-4 border-rose-500 pb-12 w-[100%]">
         <p className="font-bold text-xl">Filter:</p>
         <button onClick={filterCSS} className="bg-black h-[50px] my-3 px-8 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
@@ -258,7 +268,7 @@ ${selectedButton.code.css}`)
           </div>
         </div>
       </section>
-    </section>
+    </m.section>
     {/* Pop out with button code */}
     <div onClick={handleShowCodeToggle} className={`${!showButtonCode ? 'invisible opacity-0': 'opacity-50'} w-full h-full top-0 left-0 bg-gray-300 fixed duration-500 ease-out transition-all cursor-pointer z-20`}>
     </div>

@@ -56,7 +56,7 @@ ${selectedSection.code.css}`)
         <div>
         <h3 className="font-bold mb-4">CSS</h3>
           {sectionCSS ?
-          <SyntaxHighlighter className="h-96" language="css" style={docco}>
+          <SyntaxHighlighter className="h-96" wrapLongLines={true} language="css" style={docco}>
           {sectionCSS}
         </SyntaxHighlighter>          
           : null
