@@ -272,7 +272,7 @@ ${selectedButton.code.css}`)
     {/* Pop out with button code */}
     <div onClick={handleShowCodeToggle} className={`${!showButtonCode ? 'invisible opacity-0': 'opacity-50'} w-full h-full top-0 left-0 bg-gray-300 fixed duration-500 ease-out transition-all cursor-pointer z-20`}>
     </div>
-    <section className={`${!showButtonCode ? 'translate-x-full': 'translate-x-0'} w-[100vw] sm:w-[50vw] h-full bg-white right-0 top-0 opacity-100 fixed duration-500 ease-out transition-all p-8 flex flex-col gap-4 justify-center items-start z-30 shadow-lg`}>
+    <section className={`${!showButtonCode ? 'translate-x-full': 'translate-x-0'} w-[100vw] sm:w-[50vw] h-full bg-white right-0 top-0 opacity-100 fixed duration-500 ease-out transition-all p-8 flex flex-col gap-4 justify-center items-start z-50 shadow-lg`}>
       {buttonType === 'CSS' && cssButtonSelected ?
       <>
       <h2 className="font-bold text-3xl text-black text-left">{cssButtonSelected?.buttonName}</h2>
@@ -282,7 +282,7 @@ ${selectedButton.code.css}`)
         {cssButtonSelected.code.html}
       </SyntaxHighlighter>
       <h3 className="text-xl font-bold text-gray-500">CSS</h3>
-      <SyntaxHighlighter language="css" style={docco} className={'text-left w-[100%]'} >
+      <SyntaxHighlighter language="css" style={docco} wrapLongLines={true} className={'text-left w-[100%]'} >
         {cssButtonSelected.code.css}
       </SyntaxHighlighter>
       </>
@@ -290,7 +290,7 @@ ${selectedButton.code.css}`)
       <>
       <h2 className="font-bold text-3xl text-black text-left">{tailwindButtonSelected?.buttonName}</h2>
       {tailwindButtonSelected ?
-        <SyntaxHighlighter className={'text-left w-[100%]'} language="htmlbars" style={docco}>
+        <SyntaxHighlighter className={'text-left w-[100%]'} wrapLongLines={true} language="htmlbars" style={docco}>
         {tailwindButtonSelected.code}
       </SyntaxHighlighter>
       : null
