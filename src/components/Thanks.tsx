@@ -10,7 +10,7 @@ export default function Thanks() {
       exit={{ opacity: 0 }}
       className="w-[100%] py-20 flex flex-col flex-1 gap-8 justify-center items-center bg-gradient-to-tl from-rose-100 to-teal-100 -mb-16">
       <h1 className='font-bold text-2xl sm:text-3xl lg:text-4xl'>Thanks to...</h1>
-      <p className="font-medium sm:text-lg">Some things I created, somethings I borrowed. Here's a list of websites I wanted to thank.</p>
+      <p className="font-medium sm:text-lg">Some things I created, some things I borrowed. Here's a list of websites I wanted to thank.</p>
       <div className='flex gap-8 flex-wrap justify-between items-stretch max-w-screen-lg'>
         <div className='border-2 border-rose-500 p-4 rounded-xl flex flex-col justify-between gap-4 flex-1'>
           <h2 className='font-bold'>Unsplash</h2>
