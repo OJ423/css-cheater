@@ -12,7 +12,7 @@ export default function Home() {
       exit={{opacity:0}}
       className="w-[100%] py-20 lg:py-40 xl:py-60 flex flex-col flex-1 gap-8 justify-center items-center bg-gradient-to-tl from-rose-100 to-teal-100 -mb-16">
       <div className="px-4 sm:px-16 max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div className="lg:text-left">
+        <div className="lg:text-left flex-1">
           <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl mb-8">
             CSS Cheater - CSS, HTML, React and Tailwind Web Elements to Copy
           </h1>
@@ -22,7 +22,7 @@ export default function Home() {
             me. The site features HTML/CSS and React/Tailwind components.
           </p>
         </div>
-        <div>
+        <div className="flex-1">
           <img
             className="w-[80%] lg:w-[100%] h-auto m-auto"
             src={cssCheaterHomeImg}

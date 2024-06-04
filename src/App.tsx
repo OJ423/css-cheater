@@ -9,6 +9,7 @@ import PricingTables from './components/PricingTables'
 import Meta from './components/Meta'
 import PageMeta from './components/PageMeta'
 import  {AnimatePresence} from 'framer-motion'
+import Thanks from './components/Thanks'
 
 function App() {
 
@@ -41,6 +42,14 @@ function App() {
           <AnimatePresence mode={"wait"}>
             <Meta {...PageMeta('/pricing-tables')} />
             <PricingTables/>
+          </AnimatePresence>
+          </>
+          } />
+        <Route path='/thanks' element={
+          <>
+          <AnimatePresence mode={"wait"}>
+            <Meta {...PageMeta('/thanks')} />
+            <Thanks />
           </AnimatePresence>
           </>
           } />
