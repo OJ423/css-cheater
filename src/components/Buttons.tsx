@@ -64,6 +64,7 @@ ${selectedButton.code.css}`)
   return (
     <>
     <m.section
+      key={'/buttons-hero'}
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{duration: 1.5}}
@@ -80,19 +81,20 @@ ${selectedButton.code.css}`)
       </div>
     </m.section>
     <m.section
+      key={'/buttons-main'}
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{duration: 0.95, ease: "easeOut"}}
       className='flex flex-col gap-4 md:gap-8 items-start justify-start min-h-96 m-auto max-w-screen-xl m-auto px-4 lg:px-16 xl:px-2'>
       <div className="flex flex-row flex-wrap items-center gap-4 md:gap-8 border-b-4 border-rose-500 pb-12 w-[100%]">
         <p className="font-bold text-xl">Filter:</p>
-        <button onClick={filterCSS} className="bg-black h-[50px] font-semibold text-sm my-3 px-8 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+        <button onClick={filterCSS} className="bg-black h-[50px] font-semibold text-sm px-4 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
           CSS Buttons
        </button>
-        <button onClick={filterTailwind} className="bg-black h-[50px] font-semibold text-sm my-3 px-8 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+        <button onClick={filterTailwind} className="bg-black h-[50px] font-semibold text-sm px-4 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
           Tailwind Buttons
        </button>
-        <button onClick={filterAll} className="bg-black h-[50px] font-semibold text-sm my-3 px-8 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+        <button onClick={filterAll} className="bg-black h-[50px] font-semibold text-sm px-4 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-100 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-rose-500 before:to-rose-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
           All Buttons
        </button>
       </div>

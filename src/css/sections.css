@@ -57,7 +57,7 @@
 }
 
 @media (max-width: 1024px) {
-  .container {
+  .three-columns-container {
     flex-direction: column;
   }
 

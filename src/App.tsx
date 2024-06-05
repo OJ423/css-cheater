@@ -8,8 +8,8 @@ import Sections from './components/Sections'
 import PricingTables from './components/PricingTables'
 import Meta from './components/Meta'
 import PageMeta from './components/PageMeta'
-import  {AnimatePresence} from 'framer-motion'
 import Thanks from './components/Thanks'
+import { HelmetProvider } from 'react-helmet-async'
 
 function App() {
 
@@ -17,43 +17,35 @@ function App() {
     <>
     <Navigation />
     <main className='flex flex-col flex-1 content-stretch gap-12 px-0 w-[100%]'>
-      <Routes>
-        <Route path='/' element={<>
-          <AnimatePresence initial={false} mode={"wait"}>
-            <Meta {...PageMeta('/')} />
-            <Home/>
-          </AnimatePresence>
-          </>}/>
-        <Route path='/buttons' element={<>
-        <AnimatePresence mode={"wait"}>
-          <Meta {...PageMeta('/buttons')} />
-          <Buttons/>        
-        </AnimatePresence>
-          </>} />
-        <Route path='/sections' element={
-          <>
-          <AnimatePresence mode={"wait"}>
-            <Meta {...PageMeta('/sections')} />
-            <Sections/>
-          </AnimatePresence>
-          </>} />
-        <Route path='/pricing-tables' element={
-          <>
-          <AnimatePresence mode={"wait"}>
-            <Meta {...PageMeta('/pricing-tables')} />
-            <PricingTables/>
-          </AnimatePresence>
-          </>
-          } />
-        <Route path='/thanks' element={
-          <>
-          <AnimatePresence mode={"wait"}>
-            <Meta {...PageMeta('/thanks')} />
-            <Thanks />
-          </AnimatePresence>
-          </>
-          } />
-      </Routes>
+      <HelmetProvider>
+        <Routes>
+          <Route path='/' element={<>
+              <Meta {...PageMeta('/')} />
+              <Home/>
+            </>}/>
+          <Route path='/buttons' element={<>
+            <Meta {...PageMeta('/buttons')} />
+            <Buttons/>       
+            </>} />
+          <Route path='/sections' element={
+            <>
+              <Meta {...PageMeta('/sections')} />
+              <Sections/>
+            </>} />
+          <Route path='/pricing-tables' element={
+            <>
+              <Meta {...PageMeta('/pricing-tables')} />
+              <PricingTables/>
+            </>
+            } />
+          <Route path='/thanks' element={
+            <>
+              <Meta {...PageMeta('/thanks')} />
+              <Thanks />
+            </>
+            } />
+        </Routes>
+      </HelmetProvider>
     </main>
     <Footer/>
     </>
